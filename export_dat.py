@@ -5,7 +5,7 @@ from tnefparse.mapi import TNEFMAPI_Attribute
 def unzip_dat(dat):
     print("unzip")
     # 지정된 폴더에 파일을 저장하기 위해 폴더를 생성
-    output_directory = "./extracted_dat_files"
+    output_directory = "./unzip/extracted_dat_files"
     if not os.path.exists(output_directory):
         os.makedirs(output_directory)
 

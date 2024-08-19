@@ -1,10 +1,8 @@
 import os
-import email
+import shutil
 from email import policy
 from email.parser import BytesParser
 from email.message import EmailMessage
-import base64
-from tkinter import Tk, Button, Label, Entry, filedialog
 
 from export_dat import unzip_dat
 from collect_eml import create_eml
@@ -56,4 +54,6 @@ def check_eml_in_folder(eml_folder):
             file_paths = unzip_dat(export_dat(eml_file_path))
             msg = export_eml(eml_file_path)
 
-            return create_eml(file_paths, msg)
+            create_eml(file_paths, msg, os.path.basename(eml_file_path))
+            # return create_eml(file_paths, msg, os.path.basename(eml_file_path))
+    return
