@@ -1,9 +1,7 @@
-from tkinter import Tk, Button, Label, Entry, filedialog
-import tnefparse
+from tkinter import Tk, Button, Label, Entry
 
 from quit import quit
 from select_folder import select_folder
-from send import send
 from send_gateway import send_gateway
 
 

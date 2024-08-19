@@ -14,6 +14,7 @@ def send(server_entry, port_entry, sender_entry, receiver_entry, delay_entry, re
     delay = float(delay_entry.get()) / 1000  # 이메일 전송 사이의 시간(밀리초 단위)
     max_retries = int(retries_entry.get())  # 실패한 이메일에 대한 최대 재시도 횟수
 
+    # path가 존재하지지 않을 경우
     if not os.path.exists(eml_folder):
         status_label.config(text="폴더를 선택하세요.")
         return
@@ -24,7 +25,7 @@ def send(server_entry, port_entry, sender_entry, receiver_entry, delay_entry, re
 
     eml_files = [os.path.join(eml_folder, file) for file in os.listdir(eml_folder) if file.endswith(".eml")]
 
-    # eml 파일의 총 수
+    # eml 파일의 총 개수
     eml_total_count = len(eml_files)
     eml_processed_count = 0
 
